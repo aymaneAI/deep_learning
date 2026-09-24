@@ -9,6 +9,7 @@ def train_step(model,
                optimizer,
                device):
   train_loss, train_acc = 0,0
+  model = model.to(device)
   model.train()
   for batch,(X, y) in enumerate(train_dataloader):
     X, y = X.to(device), y.to(device)
@@ -29,6 +30,7 @@ def test_step(model,
               loss_fn,
               device):
   test_loss, test_acc = 0,0
+  model = model.to(device)
   model.eval()
   with torch.inference_mode():
     for batch, (X, y) in enumerate(test_dataloader):
