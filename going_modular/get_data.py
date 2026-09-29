@@ -2,12 +2,12 @@ from pathlib import Path
 import os, zipfile
 import requests
 # Create directors
-def download_data(dir_name:str,
+def download_data(file_name:str,
                   data_url:str,
                   ):
   data_path = Path('data/')
-  image_path = data_path/dir_name
-  image_path_zip = data_path/f'{dir_name}.zip'
+  image_path = data_path/file_name
+  image_path_zip = data_path/f'{file_name}.zip'
   if image_path.is_dir():
     print(f'{image_path} already exist ,skip the download.')
   else:
