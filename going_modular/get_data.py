@@ -13,7 +13,7 @@ def download_data(file_name:str,
                     
   data_path = Path('data/')
   image_path = data_path/file_name
-  image_path_zip = data_path/f'{file_name}.zip'
+  image_path_zip = data_path/Path(data_url).name
   if image_path.is_dir():
     print(f'{image_path} already exist ,skip the download.')
   else:
