@@ -67,15 +67,13 @@ def train(model,
                                     test_dataloader = test_dataloader,
                                     loss_fn = loss_fn,
                                     device = device)
-    print(f'train_loss : {train_loss:.4f}')
-    print(f'train_acc  : {train_acc:.2f}%')
-    print(f'test_loss  : {test_loss:.4f}')
-    print(f'test_acc   : {test_acc:.2f}%')
+    print(f'train_loss : {train_loss:.4f} | train_acc  : {train_acc:.2f}% | test_loss  : {test_loss:.4f} | test_acc   : {test_acc:.2f}%')
+    
     results['train_loss'].append(train_loss)
     results['test_loss'].append(test_loss)
     results['train_acc'].append(train_acc)
     results['test_acc'].append(test_acc)
-  return results
   end_train = timer()
   train_time = end_train - start_train
   print(f'The model was training for {train_time // 60} min and {train_time % 60} sec.')
+  return results
