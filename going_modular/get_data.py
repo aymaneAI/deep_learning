@@ -5,6 +5,12 @@ import requests
 def download_data(file_name:str,
                   data_url:str,
                   ):
+                    
+  '''
+  file_name : the name of the file using for storing the data
+  data_url : the url of the data you want to download
+  '''
+                    
   data_path = Path('data/')
   image_path = data_path/file_name
   image_path_zip = data_path/f'{file_name}.zip'
